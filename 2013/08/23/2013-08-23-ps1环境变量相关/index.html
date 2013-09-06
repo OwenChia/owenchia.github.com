@@ -223,7 +223,7 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 
 <h2>设置</h2>
 <p>具体的设置就看个人喜好了，下面贴一下我的</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -232,14 +232,14 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 7
 8
 9
-</pre></td><td class="code"><pre>if [[ ${EUID} == 0 ]] ; then
-        ps1_color="\[\033[0;31m\]";
-        user_host="\h"
+</pre></td><td class="code"><pre>if <span class="special">[</span><span class="special">[</span> <span class="formula">$<span class="special">{</span>EUID<span class="special">}</span> == 0 <span class="special">]</span><span class="special">]</span> ; then
+        ps1_color="<span class="command">\[</span>\033<span class="special">[</span>0;31m<span class="command">\]</span>";
+        user_host="<span class="command">\h</span>"
 else
-        ps1_color="\[\033[0;34m\]";
-        user_host="\[\033[0;36m\]\u\[\033[0;31m\]@\[\033[0;32m\]\h"
+        ps1_color="<span class="command">\[</span>\033<span class="special">[</span>0;34m<span class="command">\]</span>";
+        user_host="<span class="command">\[</span>\033<span class="special">[</span>0;36m<span class="command">\]</span><span class="command">\u</span><span class="command">\[</span>\033<span class="special">[</span>0;31m<span class="command">\]</span>@<span class="command">\[</span>\033<span class="special">[</span>0;32m<span class="command">\]</span><span class="command">\h</span>"
 fi
-export PS1="$ps1_color\342\224\214\342\224\200[\\$]\342\224\200[$(ppwd)$user_host$ps1_color]\342\224\200[\[\033[32m\]\w"'$(__git_ps1 "(%s)")'"$ps1_color]\342\224\200[\[\033[8m\]\t$ps1_color]\n$ps1_color\342\224\224\342\224\200&gt;\[\033[0m\]"
+export PS1="$</span>ps1_color\342\224\214\342\224\200<span class="special">[</span><span class="command">\\</span><span class="formula">$<span class="special">]</span>\342\224\200<span class="special">[</span>$</span>(ppwd)<span class="formula">$user_host$</span>ps1_color<span class="special">]</span>\342\224\200<span class="special">[</span><span class="command">\[</span>\033<span class="special">[</span>32m<span class="command">\]</span><span class="command">\w</span>"'<span class="formula">$(__git_ps1 "(%s)")'"$</span>ps1_color<span class="special">]</span>\342\224\200<span class="special">[</span><span class="command">\[</span>\033<span class="special">[</span>8m<span class="command">\]</span><span class="command">\t</span><span class="formula">$ps1_color<span class="special">]</span><span class="command">\n</span>$</span>ps1_color\342\224\224\342\224\200&gt;<span class="command">\[</span>\033<span class="special">[</span>0m<span class="command">\]</span>"
 unset ps1_color user_host
 </pre></td></tr></table></figure>
 
