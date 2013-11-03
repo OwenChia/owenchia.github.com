@@ -88,14 +88,14 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 <h2>简介</h2>
 <p>PS1是linux下的shell提示行环境变量，通过对其定制，可以得到非常漂亮的提示行。<br>而且在linux的终端下控制色彩是非常简单的一件事，用控制字符就可以做得到，所以提示行也可以变成彩色的。</p>
 <p>更改PS1环境变量很简单，只需执行  </p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="title">export</span> PS1=<span class="string">"bash"</span> <span class="comment">#将bash替换为自己想要的内容即可。</span>
 </pre></td></tr></table></figure>
 
 <p>一般<code>distro</code>默认的是<code>&quot;\u@\h:\w\$&quot;</code>之类的，我们可以在此基础上进行定制。</p>
 <h2>提示符</h2>
 <p>可以在bash的man page中找到以下内容：<br><a id="more"></a></p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -130,45 +130,45 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 </pre></td><td class="code"><pre>提示符(PROMPTING)
 在交互执行时，bash在准备好读入一条命令时显示主提示符PS1，在需要更多的输入来完成一条命令时显示PS2。Bash
 允许通过插入一些反斜杠转义的特殊字符来定制这些提示字符串，这些字符被如下解释：
-              \a     一个 ASCII 响铃字符 (07)
-              \d     日期，格式是 "星期 月份 日" (例如，"Tue May 26")
-              \D{format}
+              <span class="command">\a</span>     一个 ASCII 响铃字符 (07)
+              <span class="command">\d</span>     日期，格式是 "星期 月份 日" (例如，"Tue May 26")
+              <span class="command">\D</span><span class="special">{</span>format<span class="special">}</span>
                      format被传递给strftime(3)，结果被插入到提示字符串中；
 		     空的format将使用语言环境特定的时间格式，花括号是必需的。
-              \e     一个 ASCII 转义字符 (033)
-              \h     主机名，第一个 `.' 之前的部分
-              \H     主机名
-              \j     shell 当前管理的作业数量
-              \l     shell 的终端设备名的基本部分
-              \n     新行符
-              \r     回车
-              \s     shell 的名称， $0 的基本部分 (最后一个斜杠后面的部分)
-              \t     当前时间，采用 24小时制的 HH:MM:SS 格式
-              \T     当前时间，采用 12小时制的 HH:MM:SS 格式
-              \@     当前时间，采用 12小时制上午/下午 (am/pm) 格式
-              \A     当前时间，采用 24小时制上午/下午格式
-              \u     当前用户的用户名 the username of the current user
-              \v     bash 的版本 (例如，2.00)
-              \V     bash 的发行编号，版本号加补丁级别 (例如，2.00.0)
-              \w     当前工作目录
-              \W     当前工作目录的基本部分
-              \!     此命令的历史编号
-              \#     此命令的命令编号
-              \$     如果有效 UID 是 0，就是 #, 其他情况下是 $
-              \nnn   对应八进制数 nnn 的字符
-              \\     一个反斜杠
-              \[     一个不可打印字符序列的开始，可以用于在提示符中嵌入终端控制序列
-              \]     一个不可打印字符序列的结束
+              <span class="command">\e</span>     一个 ASCII 转义字符 (033)
+              <span class="command">\h</span>     主机名，第一个 `.' 之前的部分
+              <span class="command">\H</span>     主机名
+              <span class="command">\j</span>     shell 当前管理的作业数量
+              <span class="command">\l</span>     shell 的终端设备名的基本部分
+              <span class="command">\n</span>     新行符
+              <span class="command">\r</span>     回车
+              <span class="command">\s</span>     shell 的名称， <span class="formula">$0 的基本部分 (最后一个斜杠后面的部分)
+              <span class="command">\t</span>     当前时间，采用 24小时制的 HH:MM:SS 格式
+              <span class="command">\T</span>     当前时间，采用 12小时制的 HH:MM:SS 格式
+              <span class="command">\@</span>     当前时间，采用 12小时制上午/下午 (am/pm) 格式
+              <span class="command">\A</span>     当前时间，采用 24小时制上午/下午格式
+              <span class="command">\u</span>     当前用户的用户名 the username of the current user
+              <span class="command">\v</span>     bash 的版本 (例如，2.00)
+              <span class="command">\V</span>     bash 的发行编号，版本号加补丁级别 (例如，2.00.0)
+              <span class="command">\w</span>     当前工作目录
+              <span class="command">\W</span>     当前工作目录的基本部分
+              <span class="command">\!</span>     此命令的历史编号
+              <span class="command">\#</span>     此命令的命令编号
+              <span class="command">\$</span>     如果有效 UID 是 0，就是 <span class="special">#</span>, 其他情况下是 $</span>
+              <span class="command">\nnn</span>   对应八进制数 nnn 的字符
+              <span class="command">\\</span>     一个反斜杠
+              <span class="command">\[</span>     一个不可打印字符序列的开始，可以用于在提示符中嵌入终端控制序列
+              <span class="command">\]</span>     一个不可打印字符序列的结束
 </pre></td></tr></table></figure>
 
 <h2>色彩控制</h2>
 <p>颜色设置的格式如下</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
 2
 3
-</pre></td><td class="code"><pre>    \[\033[C;F;Bm\]
+</pre></td><td class="code"><pre>    \[\<span class="number">033</span>[C;F;Bm\]
     \[\e[C;F;Bm\]
-    \[^[[C;F;Bm\] #^[是一个字符，按下C-v后安Esc即可，单独输入^与[无效
+    \[^<span class="string">[[C;F;Bm\] #^[是一个字符，按下C-v后安Esc即可，单独输入^与[无效
 </pre></td></tr></table></figure>
 
 <p>以上三种方式皆可，但要切记加<code>\[</code>和<code>\]</code>，否则终端显示会乱掉的<br>其中<code>F</code>是<code>前景色</code>，<code>B</code>是<code>背景色</code>，<code>C</code>是<code>代码</code></p>
@@ -217,13 +217,13 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 
 <h2>git分支显示</h2>
 <p>这个其实git本身就自带了，自己写了半天脚本才发现~~~<br>在<code>/etc/bash_completion.d/git-prompt.sh</code>文件中就有<code>__git_ps1()</code>，想要在PS1中调用也非常简单</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>"'$(__git_ps1 "(%s)")'"
+<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="string">"'$(__git_ps1 "</span><span class="list">(<span class="body">%s)</span></span><span class="string">")'"</span>
 </pre></td></tr></table></figure>
 
 <h2>设置</h2>
 <p>具体的设置就看个人喜好了，下面贴一下我的</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
+<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -232,14 +232,14 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 7
 8
 9
-</pre></td><td class="code"><pre>if <span class="special">[</span><span class="special">[</span> <span class="formula">$<span class="special">{</span>EUID<span class="special">}</span> == 0 <span class="special">]</span><span class="special">]</span> ; then
-        ps1_color="<span class="command">\[</span>\033<span class="special">[</span>0;31m<span class="command">\]</span>";
-        user_host="<span class="command">\h</span>"
-else
-        ps1_color="<span class="command">\[</span>\033<span class="special">[</span>0;34m<span class="command">\]</span>";
-        user_host="<span class="command">\[</span>\033<span class="special">[</span>0;36m<span class="command">\]</span><span class="command">\u</span><span class="command">\[</span>\033<span class="special">[</span>0;31m<span class="command">\]</span>@<span class="command">\[</span>\033<span class="special">[</span>0;32m<span class="command">\]</span><span class="command">\h</span>"
-fi
-export PS1="$</span>ps1_color\342\224\214\342\224\200<span class="special">[</span><span class="command">\\</span><span class="formula">$<span class="special">]</span>\342\224\200<span class="special">[</span>$</span>(ppwd)<span class="formula">$user_host$</span>ps1_color<span class="special">]</span>\342\224\200<span class="special">[</span><span class="command">\[</span>\033<span class="special">[</span>32m<span class="command">\]</span><span class="command">\w</span>"'<span class="formula">$(__git_ps1 "(%s)")'"$</span>ps1_color<span class="special">]</span>\342\224\200<span class="special">[</span><span class="command">\[</span>\033<span class="special">[</span>8m<span class="command">\]</span><span class="command">\t</span><span class="formula">$ps1_color<span class="special">]</span><span class="command">\n</span>$</span>ps1_color\342\224\224\342\224\200&gt;<span class="command">\[</span>\033<span class="special">[</span>0m<span class="command">\]</span>"
+</pre></td><td class="code"><pre><span class="keyword">if</span> <span class="test_condition">[[ <span class="variable">${EUID}</span> == 0 ]]</span> ; <span class="keyword">then</span>
+        ps1_color=<span class="string">"\[\033[0;31m\]"</span>;
+        user_host=<span class="string">"\h"</span>
+<span class="keyword">else</span>
+        ps1_color=<span class="string">"\[\033[0;34m\]"</span>;
+        user_host=<span class="string">"\[\033[0;36m\]\u\[\033[0;31m\]@\[\033[0;32m\]\h"</span>
+<span class="keyword">fi</span>
+export PS1=<span class="string">"<span class="variable">$ps1_color</span>\342\224\214\342\224\200[\\$]\342\224\200[$(ppwd)<span class="variable">$user_host</span><span class="variable">$ps1_color</span>]\342\224\200[\[\033[32m\]\w"</span><span class="string">'$(__git_ps1 "(%s)")'</span><span class="string">"<span class="variable">$ps1_color</span>]\342\224\200[\[\033[8m\]\t<span class="variable">$ps1_color</span>]\n<span class="variable">$ps1_color</span>\342\224\224\342\224\200&gt;\[\033[0m\]"</span>
 unset ps1_color user_host
 </pre></td></tr></table></figure>
 
@@ -321,6 +321,8 @@ var duoshuoQuery = {short_name:"owenjia"};
   
     <li><a href="/categories/PS1/">PS1</a><small>1</small></li>
   
+    <li><a href="/categories/fontforge/">fontforge</a><small>1</small></li>
+  
     <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
   
     <li><a href="/categories/wm/">wm</a><small>1</small></li>
@@ -333,7 +335,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/PS1/" style="font-size: NaNpx;">PS1</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/i3/" style="font-size: NaNpx;">i3</a>
+    <a href="/tags/PS1/" style="font-size: NaNpx;">PS1</a><a href="/tags/fontforge/" style="font-size: NaNpx;">fontforge</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/i3/" style="font-size: NaNpx;">i3</a>
   </div>
 </div>
 
@@ -342,6 +344,10 @@ var duoshuoQuery = {short_name:"owenjia"};
 <div class="widget tag">
   <h3 class="title">最新文章</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2013/11/03/fontforge的一点小问题/">FontForge的一点小问题</a>
+      </li>
     
       <li>
         <a href="/2013/08/23/ps1环境变量相关/">PS1环境变量相关</a>

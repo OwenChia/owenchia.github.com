@@ -3,16 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>about | Owen Jia's Blog</title>
+  <title>FontForge的一点小问题 | Owen Jia's Blog</title>
   <meta name="author" content="Owen Jia">
   
-  <meta name="description" content="About me
-某警院信息安全专业的小小linux sir，动漫宅一枚，一直在追的番就是某死神小学生什么的。感兴趣的东西嘛，就是古文汉服之类的，还有比较能经得住折腾的小玩意，RPI什么的。性格有点冷吧，不怎么喜欢说话，很讨厌虚伪做作，毫无主见，只会盲目从众的人。当然那种满口仁义道德，暗地里却肮脏无">
+  <meta name="description" content="有段时间没写东西了，警院的作息时间真是～～算了，不吐槽了，反正再怎么不情愿也得受着～～  
+简单的说下这几天遇到的一个小问题本来是想用powerline里的fontpatcher.py脚本patch字体的，但是一直报错
+1
+2
+3
+The required FontForge modules could not be loaded.
+
+You need FontForge with Python bindings for this script to work.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="about"/>
+  <meta property="og:title" content="FontForge的一点小问题"/>
   <meta property="og:site_name" content="Owen Jia's Blog"/>
 
   
@@ -59,34 +65,62 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="page">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
       
+        <div class="icon"></div>
+        <time datetime="2013-11-03T03:25:50.000Z"><a href="/2013/11/03/fontforge的一点小问题/">11月 3 2013</a></time>
+      
       
   
-    <h1 class="title">about</h1>
+    <h1 class="title">FontForge的一点小问题</h1>
   
 
     </header>
     <div class="entry">
       
-        <h1>About me</h1>
-<p>某警院信息安全专业的小小linux sir，动漫宅一枚，一直在追的番就是某死神小学生什么的。<br>感兴趣的东西嘛，就是古文汉服之类的，还有比较能经得住折腾的小玩意，RPI什么的。<br>性格有点冷吧，不怎么喜欢说话，很讨厌虚伪做作，毫无主见，只会盲目从众的人。<br>当然那种满口仁义道德，暗地里却肮脏无比的家伙也很讨厌。  </p>
-<p>本博客不定期更新，想起什么来就写点什么。  </p>
-<h1>Contact</h1>
-<ul>
-<li>Email : <a href="mailto:aptx945@gmail.com">aptx945@gmail.com</a></li>
-<li>Weibo : <a href="http://weibo.com/u/3289488825" target="_blank">OwenJia_t</a></li>
-</ul>
+        <p>有段时间没写东西了，警院的作息时间真是～～算了，不吐槽了，反正再怎么不情愿也得受着～～  </p>
+<p>简单的说下这几天遇到的一个小问题<br>本来是想用powerline里的fontpatcher.py脚本patch字体的，<br>但是一直报错</p>
+<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>The required FontForge modules could not be loaded.
+
+You need FontForge with Python bindings for this script to work.
+</pre></td></tr></table></figure>
+
+<p><a id="more"></a><br>可是我的FontForge已经安装过了，搜索了一下，本以为是源里的没有<code>--enable-pyextension</code>，<br>于是<code>zypper si fontforge</code>，看了下spec文件，里面<code>configure参数有-enable-pyextension</code>，<br>所以就用直接<code>rpmbuild -bb</code>然后<code>rpm -i</code>了<br>可是我发现这样再执行fontpatcher.py还是会报错，而且跟之前的错误一样～～<br>想到报错的时候提示的是FontForge modules，所以就去看了下site-packages目录，没有fontforge也没有psMat，一直以为编译的时候出问题了，反复编译了好几次，无果<br>直接把编译生成的fontforge.so/psMat.so拷过去也不行<br>无奈之下又回去翻网站上的文档，看到os x下的用法跟linux下的用法不太一样</p>
+<p>linux下是这样</p>
+<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>$ /path/to/fontpatcher.py MyFontFile.ttf
+</pre></td></tr></table></figure>
+
+<p>os x下是这样</p>
+<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>$ fontforge -script /path/to/fontpatcher.py MyFontFile.ttf
+</pre></td></tr></table></figure>
+
+<p>本来是想试试看os x的方法linux能不能用的，没报多大希望，结果竟然成功了～～<br>回去翻了下man，发现linux下的fontforge确实可以这么用，只是官网上没有给出，WTF<br>最后测试了下，在其他distro上，官网上的方法是可行的，比如archlinux上，<br>但是在openSUSE上是不可行的，只能通过 -script参数执行脚本。</p>
+<p>参考链接<br><a href="http://webcache.googleusercontent.com/search?q=cache:uxLQ2w2QftsJ:fontforge.org/python.html+&amp;cd=1&amp;hl=zh-CN&amp;ct=clnk&amp;client=firefox-a" target="_blank">Writing python scripts to change fonts in FontForge</a><br><a href="https://powerline.readthedocs.org/en/latest/fontpatching.html#os-x" target="_blank">Font patching</a><br><a href="http://linux.die.net/man/1/fontforge" target="_blank">man fontforge</a></p>
 
       
     </div>
     <footer>
       
         
+  
+  <div class="categories">
+    <a href="/categories/fontforge/">fontforge</a>
+  </div>
+
         
+  
+  <div class="tags">
+    <a href="/tags/fontforge/">fontforge</a>
+  </div>
+
 	<!-- Baidu Button BEGIN -->
 	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
 	<span class="bds_more">分享到：</span>
