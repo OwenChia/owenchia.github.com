@@ -3,22 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FontForge的一点小问题 | Owen Jia's Blog</title>
+  <title>Solarized配色推荐 | Owen Jia's Blog</title>
   <meta name="author" content="Owen Jia">
   
-  <meta name="description" content="有段时间没写东西了，警院的作息时间真是～～算了，不吐槽了，反正再怎么不情愿也得受着～～  
-简单的说下这几天遇到的一个小问题,准确的说是前几天～～本来是想用powerline里的fontpatcher.py脚本patch字体的，但是一直报错
-1
-2
-3
-The required FontForge modules could not be loaded.
-
-You need FontForge with Python bindings for this script to work.">
+  <meta name="description" content="简介">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="FontForge的一点小问题"/>
+  <meta property="og:title" content="Solarized配色推荐"/>
   <meta property="og:site_name" content="Owen Jia's Blog"/>
 
   
@@ -71,39 +64,56 @@ You need FontForge with Python bindings for this script to work.">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2013-11-03T03:25:50.000Z"><a href="/2013/11/03/fontforge的一点小问题/">11月 3 2013</a></time>
+        <time datetime="2013-11-26T04:22:52.000Z"><a href="/2013/11/26/solarized配色推荐/">11月 26 2013</a></time>
       
       
   
-    <h1 class="title">FontForge的一点小问题</h1>
+    <h1 class="title">Solarized配色推荐</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>有段时间没写东西了，警院的作息时间真是～～算了，不吐槽了，反正再怎么不情愿也得受着～～  </p>
-<p>简单的说下这几天遇到的一个小问题,准确的说是前几天～～<br>本来是想用powerline里的fontpatcher.py脚本patch字体的，<br>但是一直报错</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+        <h2>简介</h2>
+<p><img src="/imgs/solarized-yinyang.png" alt="solarized-yinyang"><br><a id="more"></a><br><code>官网</code> <a href="http://ethanschoonover.com/" target="_blank"><a href="http://ethanschoonover.com/">http://ethanschoonover.com/</a></a><br><code>github</code> <a href="https://github.com/altercation/solarized" target="_blank"><a href="https://github.com/altercation/solarized">https://github.com/altercation/solarized</a></a></p>
+<p>官方提供了对很多应用的支持，不过好像没有<code>konsole</code>的，怎么办？</p>
+<p>不用担心，有github呢，稍微搜索下就能找得到<br>比如这个<br><a href="https://github.com/hayalci/kde-colors-solarized" target="_blank"><a href="https://github.com/hayalci/kde-colors-solarized">https://github.com/hayalci/kde-colors-solarized</a></a><br>提供了<code>kate</code>、<code>konsole</code>的支持。</p>
+<h2>使用方法</h2>
+<p>至于使用方法嘛，很简单，<br><strong>konsole</strong><br>直接把<code>colorscheme</code>文件复制到</p>
+<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>    <span class="variable">$HOME</span>/.kde4/share/apps/konsole
+</pre></td></tr></table></figure>
+
+<p>目录（版本不同路径可能有点不一样啦，不要太死板），然后在下图所示的地方选择就可以了</p>
+<p><img src="/imgs/solarized_1.png" alt=""></p>
+<p><strong>kate/kwrite</strong><br>这个将<code>kateschema</code>、<code>katesyntax</code>文件的内容复制到</p>
+<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="variable">$HOME</span>/.kde4/share/config/
+</pre></td></tr></table></figure>
+
+<p>目录中的<code>kateschemarc</code>、<code>katesyntaxhighlightingrc</code>文件后面就可以了，或者使用下面的命令</p>
+<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
 2
 3
-</pre></td><td class="code"><pre>The required FontForge modules could not be loaded.
+4
+5
+</pre></td><td class="code"><pre>cat ./<span class="string">"Solarized Dark.kateschema"</span> &gt;&gt; ~/.kde4/share/config/kateschemarc
+cat ./<span class="string">"Solarized Light.kateschema"</span> &gt;&gt; ~/.kde4/share/config/kateschemarc
 
-You need FontForge with Python bindings for this script to work.
+cat ./<span class="string">"Solarized Dark.katesyntax"</span> &gt;&gt; ~/.kde4/share/config/katesyntaxhighlightingrc
+cat ./<span class="string">"Solarized Light.katesyntax"</span> &gt;&gt; ~/.kde4/share/config/katesyntaxhighlightingrc
 </pre></td></tr></table></figure>
 
-<p><a id="more"></a><br>可是我的FontForge已经安装过了，搜索了一下，本以为是源里的没有<code>--enable-pyextension</code>，<br>于是<code>zypper si fontforge</code>，看了下spec文件，里面<code>configure参数有-enable-pyextension</code>，<br>所以就用直接<code>rpmbuild -bb</code>然后<code>rpm -i</code>了<br>可是我发现这样再执行fontpatcher.py还是会报错，而且跟之前的错误一样～～<br>想到报错的时候提示的是FontForge modules，所以就去看了下site-packages目录，没有fontforge也没有psMat，一直以为编译的时候出问题了，反复编译了好几次，无果<br>直接把编译生成的fontforge.so/psMat.so拷过去也不行<br>无奈之下又回去翻网站上的文档，看到os x下的用法跟linux下的用法不太一样</p>
-<p>linux下是这样</p>
+<p>最后再下图所示的位置选择就可以了。</p>
+<p><img src="/imgs/solarized_2.png" alt=""></p>
+<h2>GNU ls</h2>
+<p>到这里配色就可以正常使用了，但还是有点小问题<br><code>Solarized</code>没有提供对<code>GNU ls</code>的支持，所以在终端里<code>ls</code>的时候是没有色彩的，看着很别扭是吧～～<br>不过还好，我们可以通过下面的东西来为<code>ls</code>提供色彩方案（通过<code>dircolors</code>设置的）<br><a href="https://github.com/seebi/dircolors-solarized" target="_blank"><a href="https://github.com/seebi/dircolors-solarized">https://github.com/seebi/dircolors-solarized</a></a><br>使用方法<br>一条命令就可以了</p>
 <figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ /path/to/fontpatcher.py MyFontFile.ttf
+</pre></td><td class="code"><pre>    eval `dircolors /path/to/dircolorsdb`
 </pre></td></tr></table></figure>
 
-<p>os x下是这样</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>$ fontforge -script /path/to/fontpatcher.py MyFontFile.ttf
-</pre></td></tr></table></figure>
-
-<p>本来是想试试看os x的方法linux能不能用的，没抱多大希望，结果竟然成功了～～<br>回去翻了下man，发现linux下的fontforge确实可以这么用，只是官网上没有给出，WTF<br>最后测试了下，在其他distro上，官网上的方法是可行的，比如archlinux上，<br>但是在openSUSE上是不可行的，只能通过 -script参数执行脚本。</p>
-<p>参考链接<br><a href="http://webcache.googleusercontent.com/search?q=cache:uxLQ2w2QftsJ:fontforge.org/python.html+&amp;cd=1&amp;hl=zh-CN&amp;ct=clnk&amp;client=firefox-a" target="_blank">Writing python scripts to change fonts in FontForge</a><br><a href="https://powerline.readthedocs.org/en/latest/fontpatching.html#os-x" target="_blank">Font patching</a><br><a href="http://linux.die.net/man/1/fontforge" target="_blank">man fontforge</a></p>
+<p>如果不想每次都要手动的话可以加入到<code>.{z,ba}shrc</code>里</p>
+<p>最后上张效果图吧<br><img src="/imgs/solarized.png" alt=""></p>
 
       
     </div>
@@ -112,13 +122,13 @@ You need FontForge with Python bindings for this script to work.
         
   
   <div class="categories">
-    <a href="/categories/fontforge/">fontforge</a>
+    <a href="/categories/Solarized/">Solarized</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/fontforge/">fontforge</a>
+    <a href="/tags/Solarized/">Solarized</a>
   </div>
 
 	<!-- Baidu Button BEGIN -->
