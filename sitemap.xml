@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://owenchia.github.io/about/index.html</loc>
+    <lastmod>2015-08-04T18:21:19.190Z</lastmod>
+  </url>
+  <url>
     <loc>http://owenchia.github.io/2013/11/26/solarized配色推荐/</loc>
     <lastmod>2013-12-14T14:26:38.000Z</lastmod>
   </url>
@@ -19,9 +23,5 @@
   <url>
     <loc>http://owenchia.github.io/2013/08/12/-titling-wm——i3wm/</loc>
     <lastmod>2013-10-23T00:43:01.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://owenchia.github.io/about/index.html</loc>
-    <lastmod>2013-08-27T08:54:04.000Z</lastmod>
   </url>
 </urlset>
