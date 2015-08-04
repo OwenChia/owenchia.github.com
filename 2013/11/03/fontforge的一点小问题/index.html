@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FontForge的一点小问题 | Owen Jia's Blog</title>
-  <meta name="author" content="Owen Jia">
+  <title>FontForge的一点小问题 | Owen Chia&#39;s Blog</title>
+  <meta name="author" content="Owen Chia">
   
   <meta name="description" content="有段时间没写东西了，警院的作息时间真是～～算了，不吐槽了，反正再怎么不情愿也得受着～～  
 简单的说下这几天遇到的一个小问题,准确的说是前几天～～本来是想用powerline里的fontpatcher.py脚本patch字体的，但是一直报错
@@ -19,14 +19,14 @@ You need FontForge with Python bindings for this script to work.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="FontForge的一点小问题"/>
-  <meta property="og:site_name" content="Owen Jia's Blog"/>
+  <meta property="og:site_name" content="Owen Chia&#39;s Blog"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="/atom.xml" title="Owen Jia's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Owen Chia&#39;s Blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -48,7 +48,7 @@ You need FontForge with Python bindings for this script to work.">
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Owen Jia's Blog</a></h1>
+  <h1><a href="/">Owen Chia&#39;s Blog</a></h1>
   <h2><a href="/">及之而后知，履之而后艰，乌有不行而知者乎？</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
@@ -67,6 +67,18 @@ You need FontForge with Python bindings for this script to work.">
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -83,7 +95,7 @@ You need FontForge with Python bindings for this script to work.">
       
         <p>有段时间没写东西了，警院的作息时间真是～～算了，不吐槽了，反正再怎么不情愿也得受着～～  </p>
 <p>简单的说下这几天遇到的一个小问题,准确的说是前几天～～<br>本来是想用powerline里的fontpatcher.py脚本patch字体的，<br>但是一直报错</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 3
 </pre></td><td class="code"><pre>The required FontForge modules could not be loaded.
@@ -93,12 +105,12 @@ You need FontForge with Python bindings for this script to work.
 
 <p><a id="more"></a><br>可是我的FontForge已经安装过了，搜索了一下，本以为是源里的没有<code>--enable-pyextension</code>，<br>于是<code>zypper si fontforge</code>，看了下spec文件，里面<code>configure参数有-enable-pyextension</code>，<br>所以就用直接<code>rpmbuild -bb</code>然后<code>rpm -i</code>了<br>可是我发现这样再执行fontpatcher.py还是会报错，而且跟之前的错误一样～～<br>想到报错的时候提示的是FontForge modules，所以就去看了下site-packages目录，没有fontforge也没有psMat，一直以为编译的时候出问题了，反复编译了好几次，无果<br>直接把编译生成的fontforge.so/psMat.so拷过去也不行<br>无奈之下又回去翻网站上的文档，看到os x下的用法跟linux下的用法不太一样</p>
 <p>linux下是这样</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>$ /path/to/fontpatcher.py MyFontFile.ttf
 </pre></td></tr></table></figure>
 
 <p>os x下是这样</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>$ fontforge -script /path/to/fontpatcher.py MyFontFile.ttf
 </pre></td></tr></table></figure>
 
@@ -168,14 +180,14 @@ var duoshuoQuery = {short_name:"owenjia"};
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:owenjia.github.io/">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:owenchia.github.io/">
   </form>
 </div>
 
   
 <div class="widget tag">
-  <h3 class="title">分类</h3>
+  <h3 class="title">Categories</h3>
   <ul class="entry">
   
     <li><a href="/categories/PS1/">PS1</a><small>1</small></li>
@@ -194,7 +206,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/PS1/" style="font-size: NaNpx;">PS1</a><a href="/tags/Solarized/" style="font-size: NaNpx;">Solarized</a><a href="/tags/fontforge/" style="font-size: NaNpx;">fontforge</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/i3/" style="font-size: NaNpx;">i3</a>
   </div>
@@ -203,7 +215,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tag">
-  <h3 class="title">最新文章</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
@@ -234,7 +246,7 @@ var duoshuoQuery = {short_name:"owenjia"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 Owen Jia
+  &copy; 2015 Owen Chia
   
 </div>
 <div class="clearfix"></div></footer>

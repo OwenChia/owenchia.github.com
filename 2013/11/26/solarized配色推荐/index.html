@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Solarized配色推荐 | Owen Jia's Blog</title>
-  <meta name="author" content="Owen Jia">
+  <title>Solarized配色推荐 | Owen Chia&#39;s Blog</title>
+  <meta name="author" content="Owen Chia">
   
   <meta name="description" content="简介">
   
@@ -12,14 +12,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Solarized配色推荐"/>
-  <meta property="og:site_name" content="Owen Jia's Blog"/>
+  <meta property="og:site_name" content="Owen Chia&#39;s Blog"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="/atom.xml" title="Owen Jia's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Owen Chia&#39;s Blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -41,7 +41,7 @@
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Owen Jia's Blog</a></h1>
+  <h1><a href="/">Owen Chia&#39;s Blog</a></h1>
   <h2><a href="/">及之而后知，履之而后艰，乌有不行而知者乎？</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
@@ -60,6 +60,18 @@
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -74,26 +86,26 @@
     </header>
     <div class="entry">
       
-        <h2>简介</h2>
-<p><img src="/imgs/solarized-yinyang.png" alt="solarized-yinyang"><br><a id="more"></a><br><code>官网</code> <a href="http://ethanschoonover.com/" target="_blank"><a href="http://ethanschoonover.com/">http://ethanschoonover.com/</a></a><br><code>github</code> <a href="https://github.com/altercation/solarized" target="_blank"><a href="https://github.com/altercation/solarized">https://github.com/altercation/solarized</a></a></p>
+        <h2 id="简介">简介</h2>
+<p><img src="/imgs/solarized-yinyang.png" alt="solarized-yinyang"><br><a id="more"></a><br><code>官网</code> <a href="http://ethanschoonover.com/" target="_blank">http://ethanschoonover.com/</a><br><code>github</code> <a href="https://github.com/altercation/solarized" target="_blank">https://github.com/altercation/solarized</a></p>
 <p>官方提供了对很多应用的支持，不过好像没有<code>konsole</code>的，怎么办？</p>
-<p>不用担心，有github呢，稍微搜索下就能找得到<br>比如这个<br><a href="https://github.com/hayalci/kde-colors-solarized" target="_blank"><a href="https://github.com/hayalci/kde-colors-solarized">https://github.com/hayalci/kde-colors-solarized</a></a><br>提供了<code>kwrite</code>、<code>konsole</code>的支持。<br>还有这个<br><a href="https://github.com/phiggins/konsole-colors-solarized" target="_blank"><a href="https://github.com/phiggins/konsole-colors-solarized">https://github.com/phiggins/konsole-colors-solarized</a></a></p>
+<p>不用担心，有github呢，稍微搜索下就能找得到<br>比如这个<br><a href="https://github.com/hayalci/kde-colors-solarized" target="_blank">https://github.com/hayalci/kde-colors-solarized</a><br>提供了<code>kwrite</code>、<code>konsole</code>的支持。<br>还有这个<br><a href="https://github.com/phiggins/konsole-colors-solarized" target="_blank">https://github.com/phiggins/konsole-colors-solarized</a></p>
 <p>此外，如果安装了kate的话，kate和Kwrite里默认会有这个主题的，konsole也有，但是konsole的有点小问题。</p>
-<h2>使用方法</h2>
+<h2 id="使用方法">使用方法</h2>
 <p>至于使用方法嘛，很简单，<br><strong>konsole</strong><br>直接把<code>colorscheme</code>文件复制到</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>    <span class="variable">$HOME</span>/.kde4/share/apps/konsole
 </pre></td></tr></table></figure>
 
 <p>目录（版本不同路径可能有点不一样啦，不要太死板），然后在下图所示的地方选择就可以了</p>
 <p><img src="/imgs/solarized_1.png" alt=""></p>
 <p><strong>kwrite</strong><br>这个将<code>kateschema</code>、<code>katesyntax</code>文件的内容复制到</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="variable">$HOME</span>/.kde4/share/config/
 </pre></td></tr></table></figure>
 
 <p>目录中的<code>kateschemarc</code>、<code>katesyntaxhighlightingrc</code>文件后面就可以了，或者使用下面的命令</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -107,10 +119,10 @@ cat ./<span class="string">"Solarized Light.katesyntax"</span> &gt;&gt; ~/.kde4/
 
 <p>最后再下图所示的位置选择就可以了。</p>
 <p><img src="/imgs/solarized_2.png" alt=""></p>
-<h2>GNU ls</h2>
-<p>到这里配色就可以正常使用了，但还是有点小问题<br><code>Solarized</code>没有提供对<code>GNU ls</code>的支持，所以在终端里<code>ls</code>的时候是没有色彩的，看着很别扭是吧～～<br>不过还好，我们可以通过下面的东西来为<code>ls</code>提供色彩方案（通过<code>dircolors</code>设置的）<br><a href="https://github.com/seebi/dircolors-solarized" target="_blank"><a href="https://github.com/seebi/dircolors-solarized">https://github.com/seebi/dircolors-solarized</a></a><br>使用方法<br>一条命令就可以了</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>    eval `dircolors /path/to/dircolorsdb`
+<h2 id="GNU_ls">GNU ls</h2>
+<p>到这里配色就可以正常使用了，但还是有点小问题<br><code>Solarized</code>没有提供对<code>GNU ls</code>的支持，所以在终端里<code>ls</code>的时候是没有色彩的，看着很别扭是吧～～<br>不过还好，我们可以通过下面的东西来为<code>ls</code>提供色彩方案（通过<code>dircolors</code>设置的）<br><a href="https://github.com/seebi/dircolors-solarized" target="_blank">https://github.com/seebi/dircolors-solarized</a><br>使用方法<br>一条命令就可以了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>    <span class="built_in">eval</span> `dircolors /path/to/dircolorsdb`
 </pre></td></tr></table></figure>
 
 <p>如果不想每次都要手动的话可以加入到<code>.{z,ba}shrc</code>里</p>
@@ -179,14 +191,14 @@ var duoshuoQuery = {short_name:"owenjia"};
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:owenjia.github.io/">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:owenchia.github.io/">
   </form>
 </div>
 
   
 <div class="widget tag">
-  <h3 class="title">分类</h3>
+  <h3 class="title">Categories</h3>
   <ul class="entry">
   
     <li><a href="/categories/PS1/">PS1</a><small>1</small></li>
@@ -205,7 +217,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/PS1/" style="font-size: NaNpx;">PS1</a><a href="/tags/Solarized/" style="font-size: NaNpx;">Solarized</a><a href="/tags/fontforge/" style="font-size: NaNpx;">fontforge</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/i3/" style="font-size: NaNpx;">i3</a>
   </div>
@@ -214,7 +226,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tag">
-  <h3 class="title">最新文章</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
@@ -245,7 +257,7 @@ var duoshuoQuery = {short_name:"owenjia"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 Owen Jia
+  &copy; 2015 Owen Chia
   
 </div>
 <div class="clearfix"></div></footer>

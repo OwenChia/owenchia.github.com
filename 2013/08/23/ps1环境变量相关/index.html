@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   
-  <title>PS1环境变量相关 | Owen Jia's Blog</title>
-  <meta name="author" content="Owen Jia">
+  <title>PS1环境变量相关 | Owen Chia&#39;s Blog</title>
+  <meta name="author" content="Owen Chia">
   
   <meta name="description" content="注：本文中终端均以bash shell为例，其他终端仅供参考。
 简介
@@ -22,14 +22,14 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="PS1环境变量相关"/>
-  <meta property="og:site_name" content="Owen Jia's Blog"/>
+  <meta property="og:site_name" content="Owen Chia&#39;s Blog"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="/atom.xml" title="Owen Jia's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Owen Chia&#39;s Blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -51,7 +51,7 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Owen Jia's Blog</a></h1>
+  <h1><a href="/">Owen Chia&#39;s Blog</a></h1>
   <h2><a href="/">及之而后知，履之而后艰，乌有不行而知者乎？</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
@@ -70,6 +70,18 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -85,17 +97,17 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
     <div class="entry">
       
         <p>注：本文中终端均以bash shell为例，其他终端仅供参考。</p>
-<h2>简介</h2>
+<h2 id="简介">简介</h2>
 <p>PS1是linux下的shell提示行环境变量，通过对其定制，可以得到非常漂亮的提示行。<br>而且在linux的终端下控制色彩是非常简单的一件事，用控制字符就可以做得到，所以提示行也可以变成彩色的。</p>
 <p>更改PS1环境变量很简单，只需执行  </p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">export</span> PS1=<span class="string">"bash"</span> <span class="comment">#将bash替换为自己想要的内容即可。</span>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword">export</span> PS1=<span class="string">"bash"</span> <span class="comment">#将bash替换为自己想要的内容即可。</span>
 </pre></td></tr></table></figure>
 
 <p>一般<code>distro</code>默认的是<code>&quot;\u@\h:\w\$&quot;</code>之类的，我们可以在此基础上进行定制。</p>
-<h2>提示符</h2>
+<h2 id="提示符">提示符</h2>
 <p>可以在bash的man page中找到以下内容：<br><a id="more"></a></p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -161,19 +173,19 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
               <span class="command">\]</span>     一个不可打印字符序列的结束
 </pre></td></tr></table></figure>
 
-<h2>色彩控制</h2>
+<h2 id="色彩控制">色彩控制</h2>
 <p>颜色设置的格式如下</p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
 2
 3
-</pre></td><td class="code"><pre>    \[\<span class="number">033</span>[C;F;Bm\]
-    \[\e[C;F;Bm\]
-    \[^<span class="string">[[C;F;Bm\] #^[是一个字符，按下C-v后安Esc即可，单独输入^与[无效
+</pre></td><td class="code"><pre>    <span class="command">\[</span>\033<span class="special">[</span>C;F;Bm<span class="command">\]</span>
+    <span class="command">\[</span><span class="command">\e</span><span class="special">[</span>C;F;Bm<span class="command">\]</span>
+    <span class="command">\[</span>^<span class="special">[</span><span class="special">[</span>C;F;Bm<span class="command">\]</span> <span class="special">#</span>^<span class="special">[</span>是一个字符，按下C-v后安Esc即可，单独输入^与<span class="special">[</span>无效
 </pre></td></tr></table></figure>
 
 <p>以上三种方式皆可，但要切记加<code>\[</code>和<code>\]</code>，否则终端显示会乱掉的<br>其中<code>F</code>是<code>前景色</code>，<code>B</code>是<code>背景色</code>，<code>C</code>是<code>代码</code></p>
 <p>具体颜色可以参照下表</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -197,7 +209,7 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 
 
 <p>代码表如下</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -215,15 +227,15 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 8                 不可见
 </pre></td></tr></table></figure>
 
-<h2>git分支显示</h2>
+<h2 id="git分支显示">git分支显示</h2>
 <p>这个其实git本身就自带了，自己写了半天脚本才发现~~~<br>在<code>/etc/bash_completion.d/git-prompt.sh</code>文件中就有<code>__git_ps1()</code>，想要在PS1中调用也非常简单</p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="string">"'$(__git_ps1 "</span><span class="list">(<span class="body">%s)</span></span><span class="string">")'"</span>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="string">"'$(__git_ps1 "</span><span class="list">(%s)</span><span class="string">")'"</span>
 </pre></td></tr></table></figure>
 
-<h2>设置</h2>
+<h2 id="设置">设置</h2>
 <p>具体的设置就看个人喜好了，下面贴一下我的</p>
-<figure class="highlight lang-bash"><table><tr><td class="gutter"><pre>1
+<figure class="highlight bash"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -232,15 +244,15 @@ export PS1=&quot;bash&quot; #将bash替换为自己想要的内容即可。
 7
 8
 9
-</pre></td><td class="code"><pre><span class="keyword">if</span> <span class="test_condition">[[ <span class="variable">${EUID}</span> == 0 ]]</span> ; <span class="keyword">then</span>
+</pre></td><td class="code"><pre><span class="keyword">if</span> [[ <span class="variable">${EUID}</span> == <span class="number">0</span> ]] ; <span class="keyword">then</span>
         ps1_color=<span class="string">"\[\033[0;31m\]"</span>;
         user_host=<span class="string">"\h"</span>
 <span class="keyword">else</span>
         ps1_color=<span class="string">"\[\033[0;34m\]"</span>;
         user_host=<span class="string">"\[\033[0;36m\]\u\[\033[0;31m\]@\[\033[0;32m\]\h"</span>
 <span class="keyword">fi</span>
-export PS1=<span class="string">"<span class="variable">$ps1_color</span>\342\224\214\342\224\200[\\$]\342\224\200[$(ppwd)<span class="variable">$user_host</span><span class="variable">$ps1_color</span>]\342\224\200[\[\033[32m\]\w"</span><span class="string">'$(__git_ps1 "(%s)")'</span><span class="string">"<span class="variable">$ps1_color</span>]\342\224\200[\[\033[8m\]\t<span class="variable">$ps1_color</span>]\n<span class="variable">$ps1_color</span>\342\224\224\342\224\200&gt;\[\033[0m\]"</span>
-unset ps1_color user_host
+<span class="keyword">export</span> PS1=<span class="string">"<span class="variable">$ps1_color</span>\342\224\214\342\224\200[\\$]\342\224\200[<span class="variable">$(ppwd)</span><span class="variable">$user_host</span><span class="variable">$ps1_color</span>]\342\224\200[\[\033[32m\]\w"</span><span class="string">'$(__git_ps1 "(%s)")'</span><span class="string">"<span class="variable">$ps1_color</span>]\342\224\200[\[\033[8m\]\t<span class="variable">$ps1_color</span>]\n<span class="variable">$ps1_color</span>\342\224\224\342\224\200&gt;\[\033[0m\]"</span>
+<span class="built_in">unset</span> ps1_color user_host
 </pre></td></tr></table></figure>
 
 <p>我的是添加了一个判断语句，用以区分root用户跟普通用户，将其设置为不同颜色。<br>最后将以上代码添加到<code>/etc/bash.bashrc</code>文件中即可。</p>
@@ -309,14 +321,14 @@ var duoshuoQuery = {short_name:"owenjia"};
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:owenjia.github.io/">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:owenchia.github.io/">
   </form>
 </div>
 
   
 <div class="widget tag">
-  <h3 class="title">分类</h3>
+  <h3 class="title">Categories</h3>
   <ul class="entry">
   
     <li><a href="/categories/PS1/">PS1</a><small>1</small></li>
@@ -335,7 +347,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/PS1/" style="font-size: NaNpx;">PS1</a><a href="/tags/Solarized/" style="font-size: NaNpx;">Solarized</a><a href="/tags/fontforge/" style="font-size: NaNpx;">fontforge</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/i3/" style="font-size: NaNpx;">i3</a>
   </div>
@@ -344,7 +356,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tag">
-  <h3 class="title">最新文章</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
@@ -375,7 +387,7 @@ var duoshuoQuery = {short_name:"owenjia"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 Owen Jia
+  &copy; 2015 Owen Chia
   
 </div>
 <div class="clearfix"></div></footer>

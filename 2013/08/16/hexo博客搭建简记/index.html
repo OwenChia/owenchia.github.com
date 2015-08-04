@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hexo博客搭建简记 | Owen Jia's Blog</title>
-  <meta name="author" content="Owen Jia">
+  <title>hexo博客搭建简记 | Owen Chia&#39;s Blog</title>
+  <meta name="author" content="Owen Chia">
   
   <meta name="description" content="简介
 hexo是一个基于node.js的静态博客，其最大优势就是快功能如下:  
@@ -24,14 +24,14 @@ hexo是一个基于node.js的静态博客，其最大优势就是快功能如下
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="hexo博客搭建简记"/>
-  <meta property="og:site_name" content="Owen Jia's Blog"/>
+  <meta property="og:site_name" content="Owen Chia&#39;s Blog"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="/atom.xml" title="Owen Jia's Blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Owen Chia&#39;s Blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -53,7 +53,7 @@ hexo是一个基于node.js的静态博客，其最大优势就是快功能如下
 
 <body>
   <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Owen Jia's Blog</a></h1>
+  <h1><a href="/">Owen Chia&#39;s Blog</a></h1>
   <h2><a href="/">及之而后知，履之而后艰，乌有不行而知者乎？</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
@@ -72,6 +72,18 @@ hexo是一个基于node.js的静态博客，其最大优势就是快功能如下
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
   <div class="post-content">
     <header>
       
@@ -86,7 +98,7 @@ hexo是一个基于node.js的静态博客，其最大优势就是快功能如下
     </header>
     <div class="entry">
       
-        <h2>简介</h2>
+        <h2 id="简介">简介</h2>
 <p><code>hexo</code>是一个基于<code>node.js</code>的静态博客，其最大优势就是<code>快</code><br>功能如下:  </p>
 <ul>
 <li>不可思议的快速 ─ 只要一眨眼静态文件即生成完成</li>
@@ -97,14 +109,14 @@ hexo是一个基于node.js的静态博客，其最大优势就是快功能如下
 <li>兼容于 <code>Windows</code>, <code>Mac</code> &amp; <code>Linux</code></li>
 </ul>
 <p>项目主页在<a href="https://github.com/tommy351/hexo" target="_blank">这里</a>，详细的情况可以去项目主页查看。</p>
-<h2>安装</h2>
+<h2 id="安装">安装</h2>
 <p>   首先需要安装<code>git</code>、<code>node.js</code><br><a id="more"></a></p>
 <p>   <code>Git</code>可以通过包管理器安装  </p>
 <p>   <code>node.js</code>可以通过<a href="https://github.com/creationix/nvm" target="_blank"><code>nvm</code></a>来安装  </p>
 <p>   安装完成后使用<a href="http://npmjs.org/" target="_blank"><code>npm</code></a>安装<code>hexo</code>即可。    </p>
 <p>   详细的安装过程可以查看<a href="http://zespia.tw/hexo/docs/" target="_blank">这里</a>。</p>
-<h2>自己的改动</h2>
-<h3>Favorites Icon</h3>
+<h2 id="自己的改动">自己的改动</h2>
+<h3 id="Favorites_Icon">Favorites Icon</h3>
 <p>默认的是<code>favicon.png</code>，放到<code>source</code>目录即可，不过很多人喜欢用<code>.ico</code>的，稍微改动一下就行</p>
 <p>  在<code>themes/light/layout/_partial/head.ejs</code>里<br>  将</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
@@ -113,22 +125,22 @@ hexo是一个基于node.js的静态博客，其最大优势就是快功能如下
 
 <p>  替换为</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>  <span class="tag">&lt;<span class="title">link</span> <span class="attribute">href</span>=<span class="value">"&lt;%- config.root %&gt;favicon.ico"</span> <span class="attribute">rel</span>=<span class="value">"icon"</span> <span class="attribute">type</span>=<span class="value">"image/x-ico"</span>&gt;</span>
+</pre></td><td class="code"><pre>  &lt;link href=<span class="string">"&lt;%- config.root %&gt;favicon.ico"</span> rel=<span class="string">"icon"</span> <span class="keyword">type</span>=<span class="string">"image/x-ico"</span>&gt;
 </pre></td></tr></table></figure>
 
 
-<h3>share</h3>
+<h3 id="share">share</h3>
 <p>  默认分享在玛利亚之墙内没法用，虽然有可以用<code>g0agent</code>和<code>vpn</code>什么的，但终究不是很方便，于是这里换成百度分享。  </p>
 <p>  到<a href="http://share.baidu.com/code" target="_blank">百度分享</a>获得代码<br>  在<code>themes/light/layout/_partial/article.ejs</code>中<br>  将</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>  <span class="vbscript">&lt;%-partial(<span class="comment">'post/share')%&gt;</span></span>
 </pre></td></tr></table></figure>
 
 <p>  删掉，替换为百度分享的代码。</p>
-<h3>comments</h3>
+<h3 id="comments">comments</h3>
 <p>  还是那句话，在天朝这个神奇的国度，很多东西是没法用的，所以默认的<code>disqus</code>自然也要换掉，看了一圈最后决定用多说评论。  </p>
 <p>  1.在<code>多说</code>进行注册，获得通用代码<br>  2.将通用代码粘贴到<code>themes\light\layout\_partial\comment.ejs</code>里面，如下：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -142,9 +154,9 @@ hexo是一个基于node.js的静态博客，其最大优势就是快功能如下
 
 
 
-<h3>widget</h3>
+<h3 id="widget">widget</h3>
 <p>这个看自己的了，相加什么加什么<br>我的有这三个，友情连接不知道该添加谁的，所以就没挂<code>widget</code></p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -156,9 +168,9 @@ widget:
 - tagcloud
 </pre></td></tr></table></figure>
 
-<h4>Links</h4>
+<h4 id="Links">Links</h4>
 <p>1.<code>widget</code>方式<br>在 <code>themes/light/layout/_widget</code> 目录下</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -166,33 +178,33 @@ widget:
 6
 7
 8
-</pre></td><td class="code"><pre>cat &gt;&gt; links.ejs <span class="tag">&lt;<span class="title">&lt;</span> <span class="attribute">EOF</span>
-&lt;<span class="attribute">div</span> <span class="attribute">class</span>=<span class="value">"widget tag"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">h3</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>友情链接<span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
-<span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"entry"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://owenjia.github.io/"</span> <span class="attribute">title</span>=<span class="value">"OwenJia's Blog"</span>&gt;</span>OwenJia<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</pre></td><td class="code"><pre>cat &gt;&gt; links.ejs &lt;&lt; EOF
+&lt;div class="widget tag"&gt;
+&lt;h3 class="title"&gt;友情链接&lt;/h3&gt;
+&lt;ul class="entry"&gt;
+&lt;li&gt;&lt;a href="http://owenjia.github.io/" title="OwenJia's Blog"&gt;OwenJia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
 EOF
 </pre></td></tr></table></figure>
 
 <p>在themes/light/_config.yml中，添加如下：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>widgets:
 - links
 </pre></td></tr></table></figure>
 
 <p>2.<code>page</code>方式<br>新建page</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>hexo new page "Links"
 </pre></td></tr></table></figure>
 
 <p>修改<code>themes/light/_config.yml</code><br>添加<br><code>menu:
     Links: /Links</code><br>编辑<code>source/Links/index.md</code>文件，添加相关链接。</p>
-<h3>about page</h3>
+<h3 id="about_page">about page</h3>
 <p>新建page</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>hexo new page "about"
 </pre></td></tr></table></figure>
 
@@ -204,19 +216,19 @@ EOF
 </pre></td></tr></table></figure>
 
 <p>编辑<code>source/about/index.md</code>文件，添加相应信息。</p>
-<h3>RSS</h3>
+<h3 id="RSS">RSS</h3>
 <p>安装插件</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">npm</span> install hexo-generator-feed
+</pre></td><td class="code"><pre>npm install hexo<span class="attribute">-generator</span><span class="attribute">-feed</span>
 </pre></td></tr></table></figure>
 
 <p>启用插件</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">vim</span> _config.yml
+</pre></td><td class="code"><pre>vim _config<span class="preprocessor">.yml</span>
 </pre></td></tr></table></figure>
 
 <p>添加</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>plugins:
 - hexo-generator-feed
@@ -225,27 +237,27 @@ EOF
 <p>在站点添加链接：  </p>
 <p>在<code>themes/light/_config.yml</code>中，编辑 <code>rss: /atom.xml</code>  </p>
 <p>在<code>themes/light/layout/_partial/header.ejs</code>中，<code>&lt;ul&gt;&lt;/ul&gt;</code>之间<br>添加一行代码</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="tag">&lt;<span class="title">li</span>&gt;</span> <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/atom.xml"</span>&gt;</span>RSS<span class="tag">&lt;/<span class="title">a</span>&gt;</span> <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
 </pre></td></tr></table></figure>
 
-<h3>sitemap</h3>
+<h3 id="sitemap">sitemap</h3>
 <p>安装</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">npm</span> install hexo-generator-sitemap
+</pre></td><td class="code"><pre>npm install hexo<span class="attribute">-generator</span><span class="attribute">-sitemap</span>
 </pre></td></tr></table></figure>
 
 <p>开启 sitemap 功能：编辑hexo/_config.yml，添加如下代码：</p>
-<figure class="highlight lang-html"><table><tr><td class="gutter"><pre>1
+<figure class="highlight html"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>plugins:
 - hexo-generator-sitemap
 </pre></td></tr></table></figure>
 
-<h3>Google Analytics</h3>
+<h3 id="Google_Analytics">Google Analytics</h3>
 <p>  到这里<a href="http://www.google.com/analytics/" target="_blank"><code>Google Analytics</code></a>添加网址就行，顺便用启用站长工具，把<code>sitemap</code>也提交上去。     </p>
 <hr>
-<h3>发现的一点小问题</h3>
+<h3 id="发现的一点小问题">发现的一点小问题</h3>
 <p><del>1.deploy失败后必须要做出改动才能重新deploy，猜测是commit跟push放在一起的问题</del><br><del>解决方法</del><br><del><code>其一：删掉.deploy目录重新deploy</code></del><br><del><code>其二：改动文章</code></del>  </p>
 <p><del>2.修改tag或分类后重新生成文章，原有分类tag依旧存在</del><br><del>解决方法</del><br><del><code>删掉db.json文件重新生成（此方法有失败案例，因此并不推荐）</code></del>  </p>
 <p>上述问题在目前版本中已修复。<br>2013-11-03日更新。</p>
@@ -314,14 +326,14 @@ var duoshuoQuery = {short_name:"owenjia"};
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:owenjia.github.io/">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:owenchia.github.io/">
   </form>
 </div>
 
   
 <div class="widget tag">
-  <h3 class="title">分类</h3>
+  <h3 class="title">Categories</h3>
   <ul class="entry">
   
     <li><a href="/categories/PS1/">PS1</a><small>1</small></li>
@@ -340,7 +352,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tagcloud">
-  <h3 class="title">标签云</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/PS1/" style="font-size: NaNpx;">PS1</a><a href="/tags/Solarized/" style="font-size: NaNpx;">Solarized</a><a href="/tags/fontforge/" style="font-size: NaNpx;">fontforge</a><a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/i3/" style="font-size: NaNpx;">i3</a>
   </div>
@@ -349,7 +361,7 @@ var duoshuoQuery = {short_name:"owenjia"};
 
   
 <div class="widget tag">
-  <h3 class="title">最新文章</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
@@ -380,7 +392,7 @@ var duoshuoQuery = {short_name:"owenjia"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2013 Owen Jia
+  &copy; 2015 Owen Chia
   
 </div>
 <div class="clearfix"></div></footer>
